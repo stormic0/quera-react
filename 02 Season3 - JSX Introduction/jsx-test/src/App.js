@@ -1,5 +1,5 @@
 import "./App.css";
-// import { products } from "./data";
+import { products } from "./data";
 import { PersianDigits } from "./utils";
 
 function App() {
@@ -14,20 +14,19 @@ function App() {
         <div className="row">
           <div className="col">
             <div className="list-group">
-              {/* این آیتم را تکرار کنید */}
-              <div className="list-group-item">
-                <div className="d-flex align-items-center justify-content-between">
-                  <img
-                    src="https://quera.ir/qbox/view/0Cur3oz893/1.jpg"
-                    alt="رب گوجه فرنگی"
-                    className="product-image"
-                  />
-                  <span>رب گوجه فرنگی</span>
-                  {/* با این فانکشن می‌توانید عدد را با فرمت ریالی نمایش دهید */}
-                  <span>{PersianDigits(40_000)}</span>
+              {products.map((product) => (
+                <div className="list-group-item" key={product.id}>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="product-image"
+                    />
+                    <span>{product.name}</span>
+                    <span>{PersianDigits(product.price)}</span>
+                  </div>
                 </div>
-              </div>
-              {/* این آیتم را تکرار کنید */}
+              ))}
             </div>
           </div>
         </div>
