@@ -1,0 +1,18 @@
+@import url("bootstrap/dist/css/bootstrap.min.css");
+@import url("vazir-font/dist/font-face.css");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Vazir;
+  direction: rtl;
+}
+
+.product-image {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
