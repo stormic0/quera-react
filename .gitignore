@@ -2,6 +2,7 @@
 node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
+package-lock.json
 *~
 *.pyc
 .grunt
