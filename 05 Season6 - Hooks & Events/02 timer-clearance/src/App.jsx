@@ -5,15 +5,16 @@ function App({ initialSeconds }) {
   const [seconds, setSeconds] = useState(initialSeconds);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timeOut = setTimeout(() => {
       if (seconds === 0) {
-        clearInterval(interval);
-        return
+        clearInterval(timeOut);
+        return;
       }
 
-      setSeconds((oldSeconds) => oldSeconds - 1);
+      setSeconds(seconds - 1);
     }, 1000);
-    
+
+    return () => clearTimeout(timeOut);
   }, [seconds]);
 
   return (
