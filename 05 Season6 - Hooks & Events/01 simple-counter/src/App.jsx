@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
-function App() {
-  let count = 0;
+const App = () => {
+  const [count, setCount] = useState(0);
 
   const increment = () => {
-    count += 1;
+    setCount(count + 1);
   };
 
   const decrement = () => {
-    count -= 1;
+    setCount(count - 1);
   };
 
   const reset = () => {
-    count = 0;
+    setCount(0);
   };
 
   return (
@@ -26,6 +26,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
