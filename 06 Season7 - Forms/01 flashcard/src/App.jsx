@@ -1,19 +1,19 @@
-import { useState } from 'react'
-import Form from './components/Form'
-import FlashCard from './components/FlashCard'
+import { useState } from "react";
+import Form from "./components/Form";
+import FlashCard from "./components/FlashCard";
 
 function App() {
   const [flashCard, setFlashCard] = useState({
-    word: '',
-    persianEquivalent: '',
-  })
+    word: "",
+    persianEquivalent: "",
+  });
 
   return (
     <div className="container">
-      <Form />
-      <FlashCard />
+      <Form setFlashCard={setFlashCard} />
+      <FlashCard flashCard={flashCard} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
