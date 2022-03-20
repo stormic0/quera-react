@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const AverageAge = ({ average }) => {
   return (
@@ -8,7 +8,11 @@ const AverageAge = ({ average }) => {
         میانگین سن ادمین ها:‌ <span data-testid="average-age">{average}</span>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default AverageAge
+AverageAge.propTypes = {
+  average: PropTypes.number.isRequired,
+};
+
+export default AverageAge;

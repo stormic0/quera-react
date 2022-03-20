@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 const UserItem = ({ name }) => {
   return (
@@ -9,7 +9,11 @@ const UserItem = ({ name }) => {
       />
       <h3 data-testid="user-name">{name}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default UserItem
+UserItem.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
+export default UserItem;

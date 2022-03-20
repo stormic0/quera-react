@@ -1,8 +1,23 @@
-import UserItem from './UserItem'
-import PropTypes from 'prop-types'
+import UserItem from "./UserItem";
+import PropTypes from "prop-types";
 
 const UserList = ({ users }) => {
-  return <>{/* render users here... */}</>
-}
+  return (
+    <>
+      {users.map((user, index) => (
+        <UserItem name={user.name} key={index} />
+      ))}
+    </>
+  );
+};
 
-export default UserList
+UserList.propTypes = {
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      age: PropTypes.number,
+    })
+  ).isRequired,
+};
+
+export default UserList;
