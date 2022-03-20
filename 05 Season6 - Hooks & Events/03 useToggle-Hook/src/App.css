@@ -1,0 +1,22 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label span {
+  margin-left: 1rem;
+}
