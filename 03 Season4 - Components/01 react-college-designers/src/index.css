@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Vazir';
+  src: url('./assets/font/Vazir.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  font-family: 'Vazir', sans-serif;
+}
+
+.container {
+  width: 50%;
+  height: auto;
+  margin: 10px auto 0 auto;
+  padding: 10px;
+}
+
+.heading {
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.designers {
+  display: flex;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 0;
+}
+
+.designer {
+  width: 50%;
+  display: flex;
+  padding: 10px;
+}
+
+.image {
+  filter: sepia(100%) hue-rotate(161deg) saturate(223%) brightness(90%);
+  border-radius: 1rem;
+  height: 100px;
+}
+
+.content {
+  padding-right: 1em;
+}
+
+.content .name {
+  color: #0099cc;
+}
+
+.content .meta {
+  margin: 0.7em 0 0.7em;
+  font-size: 14px;
+  line-height: 1.2em;
+  color: #0099cc;
+}
+
+.content .description {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .designer {
+    width: 100%;
+  }
+}
