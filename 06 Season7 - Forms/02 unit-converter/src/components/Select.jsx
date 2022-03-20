@@ -12,7 +12,7 @@ function Select({ label, items, onChange }) {
         </select>
       </div>
     </div>
-  )
+  );
 }
 
-export default Select
+export default Select;
