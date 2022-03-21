@@ -1,13 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { THEME_TYPE } from "../constants";
-import { ThemeContext } from "../providers/ThemeProvider";
+import { useTheme } from "../providers/ThemeProvider";
 
 const ThemeSwitcher = () => {
-  // No need to change *return* part
-  // You have to set themeMode based on context
-  const themeMode = THEME_TYPE.LIGHT;
-
-  const handleThemeChange = (e) => {};
+  const { theme, themeToggler } = useTheme();
 
   return (
     <div className="switch-container">
@@ -15,8 +11,8 @@ const ThemeSwitcher = () => {
         <input
           data-testid="theme-changer"
           type="checkbox"
-          checked={themeMode === THEME_TYPE.DARK}
-          onChange={handleThemeChange}
+          checked={theme === THEME_TYPE.DARK}
+          onChange={themeToggler}
         />
         <span className="slider round"></span>
       </label>
