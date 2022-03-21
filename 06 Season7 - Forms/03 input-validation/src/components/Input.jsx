@@ -5,11 +5,6 @@ const Input = ({ label, id, type, validators, errorText }) => {
   const [firstTime, setFirstTime] = useState(true);
   const [isValid, setIsValid] = useState(true);
 
-  const handleFocusOut = (e) => {
-    setFirstTime(false);
-    setIsValid(validate(e.target.value, validators));
-  };
-
   return (
     <div
       className={`form-input ${
@@ -21,7 +16,10 @@ const Input = ({ label, id, type, validators, errorText }) => {
       <input
         id={id}
         type={type}
-        onBlur={handleFocusOut}
+        onBlur={(e) => {
+          setFirstTime(false);
+          setIsValid(validate(e.target.value, validators));
+        }}
         onChange={(e) => setIsValid(validate(e.target.value, validators))}
       />
       <p>{!firstTime && !isValid && errorText}</p>
