@@ -1,28 +1,29 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import "./App.css";
 
+const timerReducer = (state, action) => {
+  switch (action.type) {
+    case "+":
+      return state + 1;
+    case "-":
+      return state - 1;
+    case "reset":
+      return 0;
+    default:
+      return state;
+  }
+};
+
 const App = () => {
-  const [count, setCount] = useState(0);
-
-  const increment = () => {
-    setCount(count + 1);
-  };
-
-  const decrement = () => {
-    setCount(count - 1);
-  };
-
-  const reset = () => {
-    setCount(0);
-  };
+  const [count, countDispatch] = useReducer(timerReducer, 0);
 
   return (
     <div className="App">
       <div className="counter">
         <h1>{count}</h1>
-        <button onClick={increment}>+</button>
-        <button onClick={decrement}>-</button>
-        <button onClick={reset}>reset</button>
+        <button onClick={() => countDispatch({ type: "+" })}>+</button>
+        <button onClick={() => countDispatch({ type: "-" })}>-</button>
+        <button onClick={() => countDispatch({ type: "reset" })}>reset</button>
       </div>
     </div>
   );
