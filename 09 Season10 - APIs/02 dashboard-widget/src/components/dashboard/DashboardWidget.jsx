@@ -1,10 +1,6 @@
-const DashboardWidget = ({
-  title,
-  icon,
-  value,
-  color = 'bg-primary',
-  testId,
-}) => {
+const Toman = "تومان";
+
+const DashboardWidget = ({ title, icon, value, color = "bg-primary", testId }) => {
   return (
     <div className="card primary">
       <div className="card-body d-flex align-items-center">
@@ -14,14 +10,13 @@ const DashboardWidget = ({
         <div>
           <h4 className="text-value text-secondary" data-testid={testId}>
             {value}
+            {title === "درآمد کل" && ` ${Toman}`}
           </h4>
-          <div className="text-muted text-uppercase font-weight-bold small">
-            {title}
-          </div>
+          <div className="text-muted text-uppercase font-weight-bold small">{title}</div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DashboardWidget
+export default DashboardWidget;

@@ -1,11 +1,45 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import DashboardWidget from 'components/dashboard/DashboardWidget'
+import { useEffect, useState } from "react";
+import axios from "axios";
+import DashboardWidget from "components/dashboard/DashboardWidget";
 
 const Dashboard = () => {
+  const [data, setData] = useState({
+    productCount: 0,
+    totalIncome: 0,
+    totalOrders: 0,
+  });
+
+  const getProductsCount = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/products");
+      const data = await res.data;
+      setData((prev) => ({ ...prev, productCount: data.length }));
+    } catch (err) {
+      console.error("Somthing went wrong!", err);
+    }
+  };
+
+  const sumReducer = (sum, prod) => (sum += prod.price);
+
+  const getOrdersData = async () => {
+    try {
+      const res = await axios.get("http://localhost:8000/orders");
+      const data = await res.data;
+      const successfullOrders = data.filter((prod) => prod.status === 1);
+      setData((prev) => ({
+        ...prev,
+        totalIncome: successfullOrders.reduce(sumReducer, 0),
+        totalOrders: successfullOrders.length,
+      }));
+    } catch (err) {
+      console.error("Somthing went wrong!", err);
+    }
+  };
+
   useEffect(() => {
-    // put your codes here...
-  }, [])
+    getProductsCount();
+    getOrdersData();
+  }, []);
 
   return (
     <>
@@ -14,7 +48,7 @@ const Dashboard = () => {
           <DashboardWidget
             title="تعداد محصولات"
             icon="tshirt"
-            value={0}
+            value={data.productCount}
             color="bg-primary"
             testId="products-count"
           />
@@ -23,7 +57,7 @@ const Dashboard = () => {
           <DashboardWidget
             title="درآمد کل"
             icon="coins"
-            value={0}
+            value={data.totalIncome}
             color="bg-warning"
             testId="total-incomes"
           />
@@ -32,14 +66,14 @@ const Dashboard = () => {
           <DashboardWidget
             title="تعداد سفارشات موفق"
             icon="shopping-cart"
-            value={0}
+            value={data.totalOrders}
             color="bg-danger"
             testId="successful-orders-count"
           />
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
