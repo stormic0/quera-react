@@ -1,0 +1,157 @@
+[
+  {
+    "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/index.js": "1",
+    "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/App.jsx": "2",
+    "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/data/Styles.js": "3",
+    "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/components/NameBox.jsx": "4",
+    "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/components/ThemeSwitcher.jsx": "5",
+    "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/providers/ThemeProvider.jsx": "6",
+    "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/constants/index.js": "7"
+  },
+  {
+    "size": 168,
+    "mtime": 1638808494000,
+    "results": "8",
+    "hashOfConfig": "9"
+  },
+  {
+    "size": 494,
+    "mtime": 1647849045491,
+    "results": "10",
+    "hashOfConfig": "9"
+  },
+  {
+    "size": 505,
+    "mtime": 1638808494000,
+    "results": "11",
+    "hashOfConfig": "9"
+  },
+  {
+    "size": 248,
+    "mtime": 1638808494000,
+    "results": "12",
+    "hashOfConfig": "9"
+  },
+  {
+    "size": 625,
+    "mtime": 1647849037217,
+    "results": "13",
+    "hashOfConfig": "9"
+  },
+  {
+    "size": 748,
+    "mtime": 1647848962399,
+    "results": "14",
+    "hashOfConfig": "9"
+  },
+  {
+    "size": 65,
+    "mtime": 1638808494000,
+    "results": "15",
+    "hashOfConfig": "9"
+  },
+  {
+    "filePath": "16",
+    "messages": "17",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": "18"
+  },
+  "20cant",
+  {
+    "filePath": "19",
+    "messages": "20",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "21",
+    "messages": "22",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": "18"
+  },
+  {
+    "filePath": "23",
+    "messages": "24",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": "18"
+  },
+  {
+    "filePath": "25",
+    "messages": "26",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "27",
+    "messages": "28",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "29",
+    "messages": "30",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": "18"
+  },
+  "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/index.js",
+  [],
+  [
+    "31",
+    "32"
+  ],
+  "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/App.jsx",
+  [],
+  "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/data/Styles.js",
+  [],
+  "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/components/NameBox.jsx",
+  [],
+  "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/components/ThemeSwitcher.jsx",
+  [],
+  "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/providers/ThemeProvider.jsx",
+  [],
+  "/Users/aminpayamfar/Desktop/quera-react/07 Season8 - State Management/01 dark-theme/src/constants/index.js",
+  [],
+  {
+    "ruleId": "33",
+    "replacedBy": "34"
+  },
+  {
+    "ruleId": "35",
+    "replacedBy": "36"
+  },
+  "no-native-reassign",
+  [
+    "37"
+  ],
+  "no-negated-in-lhs",
+  [
+    "38"
+  ],
+  "no-global-assign",
+  "no-unsafe-negation"
+]
