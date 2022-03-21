@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { createContext } from "react";
 
 const translations = [
@@ -24,7 +24,34 @@ const translations = [
   },
 ];
 
+const LanguageContext = createContext(undefined);
+
 function LanguageProvider({ children }) {
-  return <>{props.children}</>;
+  const [languageTheme, setLanguageTheme] = useState(translations[0]);
+
+  const languageThemeToggler = (targetLanguage) => {
+    setLanguageTheme(
+      translations.filter((item) => item.language === targetLanguage)[0]
+    );
+  };
+
+  return (
+    <LanguageContext.Provider value={{ languageTheme, languageThemeToggler }}>
+      {children}
+    </LanguageContext.Provider>
+  );
 }
-export { LanguageProvider };
+
+const useLanguageContext = () => {
+  const value = useContext(LanguageContext);
+
+  if (value === undefined) {
+    throw new Error(
+      "useLanguageContext must be within LanguageContext Provider"
+    );
+  }
+
+  return value;
+};
+
+export { LanguageProvider, useLanguageContext };
