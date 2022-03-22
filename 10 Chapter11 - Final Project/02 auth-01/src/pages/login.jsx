@@ -1,44 +1,43 @@
-import { useAuth } from 'contexts/Auth'
-import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { loginAPI } from 'services/api'
+import { useAuth } from "contexts/Auth";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { loginAPI } from "services/api";
 
 const ERROR_MESSAGES = {
-  'Missing password': 'گذرواژه خالی می‌باشد!',
-  'Missing email': 'ایمیل خالی می‌باشد!',
-  'user not found': 'کاربری با این مشخصات یافت نشد!',
-}
+  "Missing password": "گذرواژه خالی می‌باشد!",
+  "Missing email": "ایمیل خالی می‌باشد!",
+  "user not found": "کاربری با این مشخصات یافت نشد!",
+};
 
 const LoginPage = () => {
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
-    email: '',
-    password: '',
-  })
-  const { toggleAuth, user } = useAuth()
-  const history = useHistory()
+    email: "",
+    password: "",
+  });
+  const { toggleAuth, user } = useAuth();
+  const history = useHistory();
 
-  const handleChange = (e) =>
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleLogin = (e) => {
-    e.preventDefault()
-    const { email, password } = form
+    e.preventDefault();
+    const { email, password } = form;
 
     loginAPI({
       email,
       password,
     })
       .then(() => {
-        // 01. Change user login state on success login
-        // 02. Redirect user to /dashboard
+        localStorage.setItem("user", JSON.stringify({ ...user, loggedIn: true }));
+        history.push("/dashboard");
       })
-      .catch((err) => setError(() => err.response.data.error))
-  }
+      .catch((err) => setError(() => err.response.data.error));
+  };
 
   useEffect(() => {
-    // 03. Check if user already logedin, redirect to dashboard
-  }, [user])
+    if (user.loggedIn) history.push("/dashboard");
+  }, [user]);
 
   return (
     <div className="container">
@@ -60,7 +59,7 @@ const LoginPage = () => {
                   id="email"
                   name="email"
                   type="email"
-                  onClick={handleChange}
+                  onChange={handleChange}
                   className="form-control"
                   aria-describedby="emailHelp"
                 />
@@ -86,7 +85,7 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;
