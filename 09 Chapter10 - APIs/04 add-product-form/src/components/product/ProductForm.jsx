@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form";
 
 const ProductForm = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   return (
     <form onSubmit={handleSubmit((data) => onSubmit(data))}>
@@ -18,11 +18,12 @@ const ProductForm = ({ onSubmit }) => {
           </label>
           <input
             type="text"
-            className={`form-control${errors.name ? ' is-invalid' : ''}`}
+            className={`form-control${errors.name ? " is-invalid" : ""}`}
             data-testid="name-input"
             placeholder="گوشی آیفون"
+            {...register("name", { required: { value: true, message: "وارد کردن نام محصول اجباری است" } })}
           />
-          <div className="invalid-feedback"></div>
+          <div className="invalid-feedback">{errors.name && errors.name.message}</div>
         </div>
         <div className="form-group col-md-6">
           <label htmlFor="price-input" className="form-label">
@@ -30,11 +31,15 @@ const ProductForm = ({ onSubmit }) => {
           </label>
           <input
             type="number"
-            className={`form-control${errors.price ? ' is-invalid' : ''}`}
+            className={`form-control${errors.price ? " is-invalid" : ""}`}
             data-testid="price-input"
             placeholder="1000"
+            {...register("price", {
+              required: { value: true, message: "وارد کردن قیمت اجباری است" },
+              min: { value: 100, message: "مقدار قیمت باید حداقل 100 باشد" },
+            })}
           />
-          <div className="invalid-feedback"></div>
+          <div className="invalid-feedback">{errors.price && errors.price.message}</div>
         </div>
       </div>
       <div className="row mt-4">
@@ -42,7 +47,7 @@ const ProductForm = ({ onSubmit }) => {
           <label htmlFor="category-select" className="form-label">
             دسته‌بندی
           </label>
-          <select className="form-select" data-testid="category-select">
+          <select className="form-select" data-testid="category-select" {...register("category")}>
             <option value="mobile">موبایل</option>
             <option value="book">کتاب</option>
             <option value="tshirt">تیشرت</option>
@@ -53,21 +58,18 @@ const ProductForm = ({ onSubmit }) => {
             توضیحات
           </label>
           <textarea
-            className={`form-control${errors.description ? ' is-invalid' : ''}`}
+            className={`form-control${errors.description ? " is-invalid" : ""}`}
             data-testid="description-textarea"
             rows="3"
+            {...register("description")}
           />
         </div>
       </div>
-      <button
-        type="submit"
-        className="btn btn-primary mt-4 float-start"
-        data-testid="submit-button"
-      >
+      <button type="submit" className="btn btn-primary mt-4 float-start" data-testid="submit-button">
         افزودن محصول
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default ProductForm
+export default ProductForm;

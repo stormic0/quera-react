@@ -1,18 +1,11 @@
 {
   "products": [
     {
-      "name": "آيفون ۱۳",
-      "price": "10000",
+      "name": "iphone 13",
+      "price": "1200",
       "category": "mobile",
-      "description": "گوشی موبايل",
+      "description": "",
       "id": 1
-    },
-    {
-      "name": "آيفون ۱۳",
-      "price": "10000",
-      "category": "mobile",
-      "description": "گوشی موبايل",
-      "id": 2
     }
   ]
 }
