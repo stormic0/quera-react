@@ -1,10 +1,11 @@
-import { useAuth } from '../contexts/Auth'
-import React from 'react'
-import { Redirect, Route } from 'react-router-dom'
+import { useAuth } from "../contexts/Auth";
+import React from "react";
+import { Redirect, Route } from "react-router-dom";
 
 const ProtectedRoute = (props) => {
-  //TODO
-  return <></>
-}
+  const { user } = useAuth();
 
-export default ProtectedRoute
+  return <>{user.loggedIn ? <Route {...props} /> : <Redirect to={"/login"} />}</>;
+};
+
+export default ProtectedRoute;

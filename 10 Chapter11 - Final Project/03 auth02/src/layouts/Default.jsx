@@ -1,7 +1,7 @@
-import { Footer, Header, ProtectedRoute, Sidebar } from '../components'
-import React from 'react'
-import { Redirect, Route, Switch } from 'react-router-dom'
-import AppRoutes from '../routes'
+import { Footer, Header, ProtectedRoute, Sidebar } from "../components";
+import React from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import AppRoutes from "../routes";
 
 const DefaultLayout = (props) => {
   return (
@@ -18,13 +18,15 @@ const DefaultLayout = (props) => {
       <div className="page-wrapper d-block">
         <div className="page-content container-fluid">
           <Switch>
-            {/* {TODO} */}
+            {AppRoutes.map((route, index) =>
+              route.private ? <ProtectedRoute {...route} key={index} /> : <Route {...route} key={index} />
+            )}
           </Switch>
         </div>
         <Footer />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DefaultLayout
+export default DefaultLayout;
